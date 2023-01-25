@@ -11,11 +11,13 @@
         <h1>QN WebServer</h1>
         <div id="pudlo">
             <div id="knobsection">
-                <div id='knob'></div>
+                <div id='knob1'></div>
                 <form>
                     <input id='knobInput' type='text' step='0.5' min='76' max='108';>
                     <input type="button" id='enter' value="Enter">
                 </form>
+                <div id='knob2'></div>
+                <div id='knob3'></div>
             </div>
             <div id="togglebuttons">
                 <div id="allswitch">
@@ -107,25 +109,70 @@
             }
         </script>
         <script>
-            var knob = pureknob.createKnob(300, 300); 
-            knob.setProperty('angleStart', -1. * Math.PI); 
-            knob.setProperty('angleEnd', 1 * Math.PI); 
-            knob.setProperty('colorFG', '#ff4d4d'); 
-            knob.setProperty('trackWidth', 0.4); 
-            knob.setProperty('valMin', 76); 
-            knob.setProperty('valMax', 108); 
-            knob.setProperty('val', 89.5); 
-            knob.setProperty('val', 89.5); 
-            knob.setProperty('needle', true);
-            var listener = function(knob, value) { 
+            //knob 1
+            var knob1 = pureknob.createKnob(300, 300); 
+            knob1.setProperty('angleStart', -1. * Math.PI); 
+            knob1.setProperty('angleEnd', 1 * Math.PI); 
+            knob1.setProperty('colorFG', '#ff4d4d'); 
+            knob1.setProperty('trackWidth', 0.4); 
+            knob1.setProperty('valMin', 76); 
+            knob1.setProperty('valMax', 108); 
+            knob1.setProperty('val', 89.5); 
+            knob1.setProperty('val', 89.5); 
+            knob1.setProperty('needle', true);
+            var listener = function(knob1, value) { 
                 var xhttp = new XMLHttpRequest(); 
                 xhttp.open('GET', 'brightness?led=' + 7 + '&brightness=' + (value - 76) * (255 / (108 - 76)), true); 
                 xhttp.send(); 
                 console.log((value - 76) * (255 / (108 - 76)));
             }; 
-            knob.addListener(listener); 
-            var node = knob.node(); 
-            var elem = document.getElementById('knob'); 
+            knob1.addListener(listener); 
+            var node = knob1.node(); 
+            var elem = document.getElementById('knob1'); 
+            elem.appendChild(node);
+
+            //knob 2
+            var knob2 = pureknob.createKnob(300, 300); 
+            knob2.setProperty('angleStart', -1. * Math.PI); 
+            knob2.setProperty('angleEnd', 1 * Math.PI); 
+            knob2.setProperty('colorFG', '#ff4d4d'); 
+            knob2.setProperty('trackWidth', 0.4); 
+            knob2.setProperty('valMin', 76); 
+            knob2.setProperty('valMax', 108); 
+            knob2.setProperty('val', 89.5); 
+            knob2.setProperty('val', 89.5); 
+            knob2.setProperty('needle', true);
+            var listener = function(knob2, value) { 
+                var xhttp = new XMLHttpRequest(); 
+                xhttp.open('GET', 'brightness?led=' + 7 + '&brightness=' + (value - 76) * (255 / (108 - 76)), true); 
+                xhttp.send(); 
+                console.log((value - 76) * (255 / (108 - 76)));
+            }; 
+            knob2.addListener(listener); 
+            var node = knob2.node(); 
+            var elem = document.getElementById('knob2'); 
+            elem.appendChild(node);
+
+            //knob 3
+            var knob3 = pureknob.createKnob(300, 300); 
+            knob3.setProperty('angleStart', -1. * Math.PI); 
+            knob3.setProperty('angleEnd', 1 * Math.PI); 
+            knob3.setProperty('colorFG', '#ff4d4d'); 
+            knob3.setProperty('trackWidth', 0.4); 
+            knob3.setProperty('valMin', 76); 
+            knob3.setProperty('valMax', 108); 
+            knob3.setProperty('val', 89.5); 
+            knob3.setProperty('val', 89.5); 
+            knob3.setProperty('needle', true);
+            var listener = function(knob3, value) { 
+                var xhttp = new XMLHttpRequest(); 
+                xhttp.open('GET', 'brightness?led=' + 7 + '&brightness=' + (value - 76) * (255 / (108 - 76)), true); 
+                xhttp.send(); 
+                console.log((value - 76) * (255 / (108 - 76)));
+            }; 
+            knob3.addListener(listener); 
+            var node = knob3.node(); 
+            var elem = document.getElementById('knob3'); 
             elem.appendChild(node);
         </script>
         </body>
