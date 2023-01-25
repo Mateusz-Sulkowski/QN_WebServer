@@ -6,9 +6,31 @@
     </head>
     <body>
         <h1>QN WebServer</h1>
-        <button onclick='changeLed(1,1)'>LED 1 ON</button>
-        <button onclick='changeLed(1,0)'>LED 1 OFF</button>
-        <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br>
+        <div id="pudlo">
+            <div id="knobsection">
+                <div id='knob'></div>
+                <form>
+                    <input id='knobInput' type='number' step='0.5' min='76' max='108';>
+                    <button id='enter'>Enter</button>
+                </form>
+            </div>
+            <div id="togglebuttons">
+                radio<br />
+                relay<br />
+                cos<br />
+            </div>
+            <div id="statsection">
+                uptime:<br />
+                voltage:<br />
+                charging:<br />
+            </div>
+            <div id="radiocalsection">
+                <button onclick='changeLed(1,1)'>LED 1 ON</button>
+                <button onclick='changeLed(1,0)'>LED 1 OFF</button>
+                <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
+            </div>    
+        </div>
+        <script> var knobInput = document.getElementById('knobInput'); var enterButton = document.getElementById('enter'); enterButton.addEventListener('click', function() { knob.setValue(knobInput.value); });</script>
         <script>
             function changeLed(led,state) { 
                 var xhttp = new XMLHttpRequest();
@@ -26,7 +48,6 @@
                 xhttp.send(); 
             }
         </script>
-        <div id='knob'></div>
         <script>
             var knob = pureknob.createKnob(300, 300); 
             knob.setProperty('angleStart', -1. * Math.PI); 
@@ -49,8 +70,5 @@
             var elem = document.getElementById('knob'); 
             elem.appendChild(node);
         </script>
-        <input id='knobInput' type='number' step='0.5' min='76' max='108';>
-        <button id='enter'>Enter</button>
-        <script> var knobInput = document.getElementById('knobInput'); var enterButton = document.getElementById('enter'); enterButton.addEventListener('click', function() { knob.setValue(knobInput.value); }); </script>
-    </body>
+        </body>
 </html>
