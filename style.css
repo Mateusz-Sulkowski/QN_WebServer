@@ -10,6 +10,9 @@ button
     font-size: 2em; 
     background-color: #e01010; 
     color: white;
+    border: none;
+    border-radius: 15%;
+    box-shadow: 2px 2px 2px 2px black;
 } 
 input
 {
@@ -23,6 +26,11 @@ h1
     color: white;
     letter-spacing: 12px;
     border-bottom: 5px solid #e01010;
+    padding: 0.5%;
+}
+#allswitch
+{
+    scale: 1.5;
 }
 #pudlo
 {
@@ -33,6 +41,20 @@ h1
     float:left;
     width: 70%;
     height: 50%;
+    scale: 0.95;
+}
+#enter
+{
+    border:none;
+    border-radius: 15%;
+    box-shadow: 2px 2px 2px 2px black;
+}
+#knobInput
+{
+    max-width: 10%;
+    border:none;
+    border-radius: 15%;
+    box-shadow: 2px 2px 2px 2px black;
 }
 #togglebuttons
 {
@@ -126,4 +148,10 @@ input:checked + .slider:before
 {
     float: left;
     padding-left: 5%;
+}
+#radiocalibration
+{
+    background-color: #2e2e2e;
+    padding: 1%;
+    max-width: 67%; 
 }
