@@ -1,8 +1,56 @@
-<html>
+<html lang="pl-PL">
     <head>
-
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script src='pureknob.js'></script>
     </head>
     <body>
-        
+        <h1>QN WebServer</h1>
+        <button onclick='changeLed(1,1)'>LED 1 ON</button>
+        <button onclick='changeLed(1,0)'>LED 1 OFF</button>
+        <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br>
+        <script>
+            function changeLed(led,state) { 
+                var xhttp = new XMLHttpRequest();
+                xhttp.open('GET', 'led?led=' + led + '&state=' + state, true);
+                xhttp.send(); 
+                if (state === 1) { 
+                    document.getElementById('brightness' + led).value = 255;
+                } else if (state === 0) { 
+                    document.getElementById('brightness' + led).value = 0;} 
+            } 
+            function changeBrightness(led,brightness) { 
+                document.getElementById('brightness' + led).value = brightness; 
+                var xhttp = new XMLHttpRequest(); 
+                xhttp.open('GET', 'brightness?led=' + led + '&brightness=' + brightness, true); 
+                xhttp.send(); 
+            }
+        </script>
+        <div id='knob'></div>
+        <script>
+            var knob = pureknob.createKnob(300, 300); 
+            knob.setProperty('angleStart', -1. * Math.PI); 
+            knob.setProperty('angleEnd', 1 * Math.PI); 
+            knob.setProperty('colorFG', '#ff4d4d'); 
+            knob.setProperty('trackWidth', 0.4); 
+            knob.setProperty('valMin', 76); 
+            knob.setProperty('valMax', 108); 
+            knob.setProperty('val', 89.5); 
+            knob.setProperty('val', 89.5); 
+            knob.setProperty('needle', true);
+            var listener = function(knob, value) { 
+                var xhttp = new XMLHttpRequest(); 
+                xhttp.open('GET', 'brightness?led=' + 7 + '&brightness=' + (value - 76) * (255 / (108 - 76)), true); 
+                xhttp.send(); 
+                console.log((value - 76) * (255 / (108 - 76)));
+            }; 
+            knob.addListener(listener); 
+            var node = knob.node(); 
+            var elem = document.getElementById('knob'); 
+            elem.appendChild(node);
+        </script>
+        <input id='knobInput' type='number' step='0.5' min='76' max='108';>
+        <button id='enter'>Enter</button>
+        <script> var knobInput = document.getElementById('knobInput'); var enterButton = document.getElementById('enter'); enterButton.addEventListener('click', function() { knob.setValue(knobInput.value); }); </script>
     </body>
 </html>

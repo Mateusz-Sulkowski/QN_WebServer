@@ -1,0 +1,23 @@
+body
+{
+    text-align: center;
+    background-color:#333;
+} 
+button
+{
+    font-size: 2em; 
+    background-color: #ff4d4d; 
+    color: white;
+} 
+input
+{
+    font-size: 2em;
+    background-color: #b30000;
+    color: white;
+} 
+h1
+{
+    font-size: 5em; 
+    color: white;
+    border-bottom: 5px solid red;
+}
