@@ -2,6 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="suwak.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
@@ -11,84 +12,102 @@
         <h1>QN WebServer</h1>
         <div id="pudlo">
             <div id="knobsection">
-                <div id='knob1'></div>
-                <form>
-                    <input id='knobInput' type='text' step='0.5' min='76' max='108';>
-                    <input type="button" id='enter' value="Enter">
-                </form>
-                <div id='knob2'></div>
-                <div id='knob3'></div>
-            </div>
-            <div id="togglebuttons">
-                <div id="allswitch">
-                    <div id="1switch">
-                        <div class='switche'>
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label><br />
-                        </div>
-                        <div class="tekst">
-                            <span class="duzytekst"> radio</span>
-                        </div>
-                    </div><div style="clear: both;"></div>
-                    <div id="2switch">
-                        <div class='switche'>
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label><br />
-                        </div>
-                        <div class="tekst">
-                            <span class="duzytekst"> relay</span> 
-                        </div>
-                    </div><div style="clear: both;"></div>
-                    <div id="3switch">
-                        <div class='switche'>
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label><br />
-                        </div>
-                        <div class="tekst">
-                            <span class="duzytekst"> cos</span>
-                        </div>
-                    </div><div style="clear: both;"></div>
+                <div class="pudlodlaknob">
+                    <div id='knob1'></div>
+                    <form>
+                        <input id='knobInput' type='text' step='0.5' min='76' max='108';>
+                        <input type="button" id='enter' value="Enter">
+                    </form>
+                 </div>
+                 <div class="pudlodlaknob">
+                    <div id='knob2'></div>
+                    <form>
+                        <input id='knobInput' type='text' step='0.5' min='76' max='108';>
+                        <input type="button" id='enter' value="Enter">
+                    </form>
+                </div>
+                <div class="pudlodlaknob">
+                    <div id='knob3'></div>
+                    <form>
+                        <input id='knobInput' type='text' step='0.5' min='76' max='108';>
+                        <input type="button" id='enter' value="Enter">
+                    </form>
                 </div>
             </div>
             <div style="clear:both"></div>
-            <div id="statsection">
-                <span class="duzytekst">
-                    uptime:<br />
-                    voltage:<br />
-                    charging:<br />
-                 </span>
-            </div>
-            <div id="radiocalsection">
-                <form id="radiocalibration">
-                    <button onclick='changeLed(1,1)'>LED 1 ON</button>
-                    <button onclick='changeLed(1,0)'>LED 1 OFF</button>
-                    <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
-                    <button onclick='changeLed(1,1)'>LED 2 ON</button>
-                    <button onclick='changeLed(1,0)'>LED 2 OFF</button>
-                    <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
-                    <button onclick='changeLed(1,1)'>LED 3 ON</button>
-                    <button onclick='changeLed(1,0)'>LED 3 OFF</button>
-                    <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
-                    <button onclick='changeLed(1,1)'>LED 4 ON</button>
-                    <button onclick='changeLed(1,0)'>LED 4 OFF</button>
-                    <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
-                    <button onclick='changeLed(1,1)'>LED 5 ON</button>
-                    <button onclick='changeLed(1,0)'>LED 5 OFF</button>
-                    <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
-                    <button onclick='changeLed(1,1)'>LED 6 ON</button>
-                    <button onclick='changeLed(1,0)'>LED 6 OFF</button>
-                    <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
-                    <button onclick='changeLed(1,1)'>LED 7 ON</button>
-                    <button onclick='changeLed(1,0)'>LED 7 OFF</button>
-                    <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
-                </form>
-            </div>    
+            <div id="dolnasekcja">
+                <div id="lewo">
+                    <div id="togglebuttons">
+                        <div id="allswitch">
+                            <div id="1switch">
+                                <div class='switche'>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label><br />
+                                </div>
+                                <div class="tekst">
+                                    <span class="duzytekst"> radio</span>
+                                </div>
+                            </div><div style="clear: both;"></div>
+                            <div id="2switch">
+                                <div class='switche'>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label><br />
+                                </div>
+                                <div class="tekst">
+                                    <span class="duzytekst"> relay</span> 
+                                </div>
+                            </div><div style="clear: both;"></div>
+                            <div id="3switch">
+                                <div class='switche'>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label><br />
+                                </div>
+                                <div class="tekst">
+                                    <span class="duzytekst"> cos</span>
+                                </div>
+                            </div><div style="clear: both;"></div>
+                        </div>
+                    </div>
+                    <div id="statsection">
+                        <span class="duzytekst">
+                            uptime:<br />
+                            voltage:<br />
+                            charging:<br />
+                        </span>
+                    </div>
+                </div>
+                <div id="radiocalsection">
+                    <form id="radiocalibration">
+                        <button onclick='changeLed(1,1)'>LED 1 ON</button>
+                        <button onclick='changeLed(1,0)'>LED 1 OFF</button>
+                        <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
+                        <button onclick='changeLed(1,1)'>LED 2 ON</button>
+                        <button onclick='changeLed(1,0)'>LED 2 OFF</button>
+                        <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
+                        <button onclick='changeLed(1,1)'>LED 3 ON</button>
+                        <button onclick='changeLed(1,0)'>LED 3 OFF</button>
+                        <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
+                        <button onclick='changeLed(1,1)'>LED 4 ON</button>
+                        <button onclick='changeLed(1,0)'>LED 4 OFF</button>
+                        <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
+                        <button onclick='changeLed(1,1)'>LED 5 ON</button>
+                        <button onclick='changeLed(1,0)'>LED 5 OFF</button>
+                        <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
+                        <button onclick='changeLed(1,1)'>LED 6 ON</button>
+                        <button onclick='changeLed(1,0)'>LED 6 OFF</button>
+                        <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
+                        <button onclick='changeLed(1,1)'>LED 7 ON</button>
+                        <button onclick='changeLed(1,0)'>LED 7 OFF</button>
+                        <input type='range' min='0' max='255' value='0' id='brightness1' onchange='changeBrightness(1, this.value)'><br />
+                    </form>
+                </div><div style="clear:both"></div>
+            </div>   
         </div>
         <script> var knobInput = document.getElementById('knobInput'); var enterButton = document.getElementById('enter'); enterButton.addEventListener('click', function() { knob.setValue(knobInput.value); });</script>
         <script>

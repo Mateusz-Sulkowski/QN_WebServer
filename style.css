@@ -1,4 +1,3 @@
-/* Test git pull 123 */
 body
 {
     text-align: center;
@@ -29,19 +28,21 @@ h1
     border-bottom: 5px solid #e01010;
     padding: 0.5%;
 }
-#allswitch
-{
-    scale: 1.5;
-}
 #pudlo
 {
-    width: auto;
+    width: 100%;
 }
 #knobsection
 {
     float:left;
-    width: 70%;
-    height: 50%;
+    width: 90%;
+    height: 40%;
+    scale: 0.95;
+}
+#dolnasekcja
+{
+    width: 90%;
+    height: auto;
     scale: 0.95;
 }
 #enter
@@ -52,30 +53,42 @@ h1
 }
 #knobInput
 {
-    max-width: 10%;
+    max-width: 20%;
     border:none;
     border-radius: 15%;
     box-shadow: 2px 2px 2px 2px black;
 }
 #togglebuttons
 {
-    float:left;
-    width: 30%;
+    width: 90%;
     height: 50%;
     text-align: left;
 }
+#lewo
+{
+    float: left;
+    width: 20%;
+    height: auto;
+    padding-left: 5%;
+}
 #statsection
 {
-    float:left;
-    width: 40%;
+    width: 90%;
     height: 50%;
+    text-align: left;
+}
+#brightness1
+{
+    width: 60%;
+    background-color: #2e2e2e;
 }
 #radiocalsection
 {
     float:left;
-    width: 60%;
-    height: 50%;
+    width: 75%;
+    height: auto;
     text-align: left;
+    scale: 0.9;
 }
 .duzytekst
 {
@@ -155,4 +168,8 @@ input:checked + .slider:before
     background-color: #2e2e2e;
     padding: 1%;
     max-width: 67%; 
+}
+.pudlodlaknob
+{
+    float: left;
 }
