@@ -22,3 +22,24 @@ h1
     color: white;
     border-bottom: 5px solid red;
 }
+#knobsection
+{
+    float:left;
+}
+#togglebuttons
+{
+    float:left;
+}
+#statsection
+{
+    float:left;
+}
+#radiocalsection
+{
+    float:left;
+}
+.duzytekst
+{
+    color: white;
+    font-size: 36px;
+}
